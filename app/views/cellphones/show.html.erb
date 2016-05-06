@@ -1,0 +1,7 @@
+<h1> <%= "#{@cellphone.reference}" %> Data</h1>
+
+Reference:  <%= @cellphone.reference %></br>
+OS: <%= @cellphone.os %></br>
+User: <%= @cellphone.user_id %>
+</br>
+<%= link_to "Back to Index", cellphones_path %> / <%= link_to "Edit", edit_cellphone_path(@cellphone) %>
