@@ -14,8 +14,8 @@ class CellphonesController < ApplicationController
   def create
     @cellphone = Cellphone.new(cellphone_params)
     if @cellphone.save
-      flash[notice] = "The phone was successfully created"
-      redirect_to cellphones_path
+      flash[:notice] = "The phone was successfully created"
+      redirect_to @cellphone
     else 
       render 'new'
     end
@@ -38,6 +38,7 @@ class CellphonesController < ApplicationController
   
   def destroy
     @cellphone.destroy
+    flash[:notice] = "Phote successfully deleted"
     redirect_to cellphones_path
   end
   
