@@ -1,7 +1,8 @@
-<h1> <%= "#{@cellphone.reference}" %> Data</h1>
+<h1> <%= @cellphone.reference.titleize %> Data</h1>
 
 Reference:  <%= @cellphone.reference %></br>
 OS: <%= @cellphone.os %></br>
-User: <%= @cellphone.user_id %>
-</br>
+Owner: <%= @cellphone.user.username %></br>
+Created <%= time_ago_in_words @cellphone.created_at %> ago
+</br></br>
 <%= link_to "Back to Index", cellphones_path %> / <%= link_to "Edit", edit_cellphone_path(@cellphone) %>

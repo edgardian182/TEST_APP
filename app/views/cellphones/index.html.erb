@@ -5,8 +5,8 @@
     <tr>
       <th>Reference</th>
       <th>OS</th>
-      <th>User</th>
-      <th>Actions</th>
+      <th>Owner</th>
+      <th colspan=3>Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -14,7 +14,7 @@
     <tr>
       <td><%= cellphone.reference %></td>
       <td><%= cellphone.os %></td>
-      <td><%= cellphone.user_id %></td>
+      <td><%= cellphone.user.username if cellphone.user %></td>
       <td>
         <%= link_to "Show", cellphone %>
         <%= link_to "Edit", edit_cellphone_path(cellphone) %>

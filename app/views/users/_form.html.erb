@@ -1,0 +1,26 @@
+<%= render 'shared/errors', obj: @user %>
+
+<%= form_for (@user) do |f| %>
+  <p>
+    <%= f.label :username %>
+    <%= f.text_field :username, placeholder: "Your username..." %>  
+  </p>
+  <p>
+    <%= f.label :email %>
+    <%= f.email_field :email, placeholder: "your email..." %>
+  </p>
+  <p>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.label :admin %>
+    <%= f.radio_button :admin, true %> Yes
+    <%= f.radio_button :admin, false, checked: true %> No
+  </p>
+  <p>
+    <%= f.submit (@user.new_record? ? "Sign Up":"Update Account")%>
+  </p>
+<% end %>
+  
+  
