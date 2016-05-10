@@ -14,7 +14,20 @@
   </ul>
 <% end %>
 
+<div class="container">
+  <%= link_to "HOME", root_path %>
+  <% if !current_user %>
+    <%= link_to 'Sign in', login_path %>
+    <%= link_to "Sign Up", signup_path %>
+  <% else %>
+    <%= link_to 'Sign out', logout_path, method: :delete %>
+    <%= link_to "#{current_user.email}", edit_user_path(current_user) %>
+  <% end %>
+</div>
+
+<div class="container">
 <%= yield %>
+</div>
 
 </body>
 </html>

@@ -1,28 +1,10 @@
 <h1>List of Cellphones</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Reference</th>
-      <th>OS</th>
-      <th>Owner</th>
-      <th colspan=3>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @cellphones.each do |cellphone| %>
-    <tr>
-      <td><%= cellphone.reference %></td>
-      <td><%= cellphone.os %></td>
-      <td><%= cellphone.user.username if cellphone.user %></td>
-      <td>
-        <%= link_to "Show", cellphone %>
-        <%= link_to "Edit", edit_cellphone_path(cellphone) %>
-        <%= link_to "Delete", cellphone_path(cellphone), method: :delete, data: {confirm: "Are you sure?"} %>
-      </td>
-    <% end %>
-    </tr>
-  </tbody>
-</table>
-</br>
+<%= will_paginate %>
+
+<%= render 'cellphones', obj: @cellphones %>
+
+<%= will_paginate %>
+
 <%= link_to 'Back Home', root_path %> / <%= link_to 'Add New Phone', new_cellphone_path %>
+

@@ -13,11 +13,13 @@
     <%= f.label :password %>
     <%= f.password_field :password %>
   </p>
+  <% if current_user && current_user.admin %>
   <p>
     <%= f.label :admin %>
     <%= f.radio_button :admin, true %> Yes
     <%= f.radio_button :admin, false, checked: true %> No
   </p>
+  <% end %>
   <p>
     <%= f.submit (@user.new_record? ? "Sign Up":"Update Account")%>
   </p>

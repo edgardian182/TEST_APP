@@ -7,6 +7,7 @@
       <th>Username</th>
       <th>Email</th>
       <th>Nº of Devices</th>
+      <th>Profile Image</th>
       <th colspan="3">Actions</th>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
       <td><%= user.username %></td>
       <td><%= user.email %></td>
       <td><%= user.cellphones.count %></td>
+      <td><%= gravatar_for(user, size:30) %></td>
       <td><%= link_to "Show", user %></td>
       <td><%= link_to "Edit", edit_user_path(user) %></td>
       <td><%= link_to "Delete", user, method: :delete, data: {confirm: "Are you sure?"} %></td>

@@ -1,0 +1,27 @@
+<table>
+  <thead>
+    <tr>
+      <th>Reference</th>
+      <th>OS</th>
+      <th>Owner</th>
+      <th colspan=3></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% obj.each do |cellphone| %>
+    <tr>
+      <td><%= cellphone.reference %></td>
+      <td><%= cellphone.os %></td>
+      <td><%= cellphone.user.username if cellphone.user %></td>
+      <% if current_user == cellphone.user %>
+      <td>
+        <%= link_to "Show", cellphone %>
+        <%= link_to "Edit", edit_cellphone_path(cellphone) %>
+        <%= link_to "Delete", cellphone_path(cellphone), method: :delete, data: {confirm: "Are you sure?"} %>
+      </td>
+      <% end %>
+    <% end %>
+    </tr>
+  </tbody>
+</table>
+</br>
