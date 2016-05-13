@@ -10,6 +10,7 @@
   <tbody>
     <% obj.each do |cellphone| %>
     <tr>
+      <%= div_for cellphone do %>
       <td><%= cellphone.reference %></td>
       <td><%= cellphone.os %></td>
       <td><%= cellphone.user.username if cellphone.user %></td>
@@ -19,6 +20,7 @@
         <%= link_to "Edit", edit_cellphone_path(cellphone) %>
         <%= link_to "Delete", cellphone_path(cellphone), method: :delete, data: {confirm: "Are you sure?"} %>
       </td>
+      <% end %>
       <% end %>
     <% end %>
     </tr>

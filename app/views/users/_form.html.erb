@@ -16,8 +16,7 @@
   <% if current_user && current_user.admin %>
   <p>
     <%= f.label :admin %>
-    <%= f.radio_button :admin, true %> Yes
-    <%= f.radio_button :admin, false, checked: true %> No
+    <%= f.check_box :admin %>
   </p>
   <% end %>
   <p>
