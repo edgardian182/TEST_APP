@@ -53,3 +53,35 @@ Price is <%= number_to_currency(50) %> dollars
     x.style.color = "red";
   }
 </script>
+
+
+<h2>ADIVINA EL ANIMAL</h2>
+<p>Ingresa un aninal de orejas largas</p>
+<input id="animal" onmouseleave="white()">
+<button id="b1" onclick="animal()">Submit</button>
+</br>
+<%= image_tag "", id:"animalFoto", width:"", height:"" %>
+<p id="r1"></p>
+<script>
+  function animal() {
+    var x, image, respuesta;
+    x = document.getElementById('animal').value;
+    x = x.toUpperCase();
+    image = document.getElementById('animalFoto');
+    respuesta = document.getElementById('r1');
+    respuesta.innerHTML = "Hola";
+    document.getElementById('b1').innerHTML = "Bien";
+    if (x == "BURRO") {
+      image.width = "300";
+      image.height = "300";
+      image.src = "/assets/javier_bu.jpg";
+      respuesta.innerHTML = "Este es un ejemplo... XD";
+    } else {
+      respuesta.innerHTML = "Intenta de nuevo";
+    }
+  } 
+
+  function white() {
+    document.getElementById('r1').innerHTML = "";
+  }
+</script>
