@@ -85,3 +85,16 @@ Price is <%= number_to_currency(50) %> dollars
     document.getElementById('r1').innerHTML = "";
   }
 </script>
+
+</br>
+<button type="button" onclick="pruebaApp()">CLICK ME</button>
+</br></br>
+<p id="pruebaFetch"></p>
+<script>
+  function pruebaApp() {
+    var F = document.getElementById('pruebaFetch');
+    F.style.fontSize = "40px";
+    F.style.color = "blue";
+    F.innerHTML = "PRUEBA FETCH";
+  }
+</script>
